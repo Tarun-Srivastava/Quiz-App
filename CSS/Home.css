@@ -1,0 +1,225 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color:#009688;
+    font-weight: 400;
+}
+/* .correct{
+    background-color:rgb(189, 255, 189);
+}
+.Incorrect{
+    background-color: rgb(255, 166, 166);
+} */
+.custom-box{
+    max-width: 700px;
+    background-color:#ffff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+.custom-box.hide{
+    display: none;
+}
+.home-box h3{
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 25px;
+}
+
+.home-box p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: black;
+    font-weight: 400;
+}
+.home-box p span{
+    font-weight: 500;
+}
+.home-box .btn{
+    margin-top: 20px;
+}
+.btn{
+    padding: 15px 45px;
+    background-color: #009688;
+    border: 3px solid #009688;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.btn:hover{
+    /* border: 2px solid #009688; */
+    color: #009688;
+    background: #fff;
+    font-weight: 500;
+}
+.quiz-box .option-container,
+.quiz-box .question-text,
+.quiz-box .answers-indicator,
+.quiz-box .next-question-btn
+.quiz-box .question-number{
+    width: 100%;
+    float:left;
+}
+.quiz-box .question-number{
+    font-size: 18px;
+    color: #009688;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    padding: 7px 3px;
+    line-height: 25px;
+    border-radius: 7px;
+}
+.quiz-box .question-text{
+    font-size: 22px;
+    color: #000;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 20px 0;
+    margin: 0;
+}
+.quiz-box .question-container{
+    
+}
+.quiz-box .option-container .option{
+    background-color: #ccc;
+    padding:12px 14px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    position: relative;
+    overflow: hidden;
+
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+.quiz-box .option-container .option.correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(189, 255, 189);
+    z-index: -1; 
+    animation: slideInLeft .5s ease-in-out;
+}
+.quiz-box .option-container .option.Incorrect::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 166, 166);
+    z-index: -1; 
+    animation: slideInLeft .5s ease-in-out;
+}
+@keyframes slideInLeft {
+    0%{
+        transform: translate(-100%);
+    }
+    100%{
+        transform: translate(0%);
+    }
+    
+}
+.quiz-box .option-container .option.Already-answered{
+    pointer-events: none;
+}
+.quiz-box .btn{
+    margin: 15px 0;
+}
+.quiz-box .answers-indicator{
+    border-top: 1px solid #ccc;
+}
+.quiz-box .answers-indicator div{
+   height: 40px;
+   width: 40px;
+   display: inline-block;
+   background-color: #ccc;
+   border-radius: 50%;
+   margin-right: 3px;
+   margin-top: 15px;
+}
+.quiz-box .answers-indicator div.correct{
+    /* background-color: rgb(189, 255, 189); */
+    background-image: url(https://cdn-icons-png.flaticon.com/512/845/845646.png);
+     /* filter: invert();    */
+    background-size: 98%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.quiz-box .answers-indicator div.Incorrect{
+    /* background-color: ed; */
+    background-image: url(https://cdn-icons-png.flaticon.com/512/1828/1828843.png);
+    background-size: 98%;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.result-box .hide{
+    display: none;
+}
+.result-box{
+    text-align: center;
+}
+.result-box h1{
+    font-size: 36px;
+    line-height: 42px;
+    color: #009688;
+}
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+
+}
+.result-box table td{
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    font-weight: 500;
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+}
+.result-box .btn{
+    margin-right: 20px;
+}
+
+@media(max-width: 650px){
+    .custom-box, .btn {
+        transform: scale(0.7);
+    }
+}
